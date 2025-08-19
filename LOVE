@@ -1,0 +1,71 @@
+<!-- LOVE CONFESSION WEBSITE — SHAREABLE LINK VERSION --><!DOCTYPE html><html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Untuk Kamu ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg1: #0f1020; --bg2: #181c3a; --accent: #ff4d6d; --accent2:#ffd6e0; --text:#f6f7fb; }
+  body { margin:0; font-family:'Poppins', sans-serif; background: linear-gradient(160deg, var(--bg1), var(--bg2)); color: var(--text); overflow-x:hidden; }
+  .wrap { display:flex; align-items:center; justify-content:center; min-height:100vh; padding:24px; }
+  .card { width:min(100%,860px); border-radius:24px; background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); box-shadow:0 20px 80px rgba(0,0,0,0.35); backdrop-filter: blur(8px); overflow: hidden; position: relative; }
+  .banner { position: relative; height:260px; background: linear-gradient(120deg, var(--accent), var(--accent2)); }
+  .cover { position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; mix-blend-mode: overlay; opacity:.7; }
+  .avatar { position:absolute; left:32px; bottom:-56px; width:112px; height:112px; border-radius:50%; border:4px solid rgba(255,255,255,.9); background:url('https://i.postimg.cc/CdW0NWdY/yourphoto.jpg') center/cover; box-shadow:0 16px 40px rgba(0,0,0,.4); }
+  .content { padding:80px 24px 24px 24px; display:grid; grid-template-columns:1fr; gap:16px; }
+  h1 { margin:0; font-size:clamp(28px,3vw,40px); }
+  .message { margin-top:16px; font-size:clamp(16px,2.2vw,20px); line-height:1.8; min-height:140px; white-space: pre-wrap; }
+  .btns { display:flex; gap:12px; flex-wrap: wrap; margin-top:18px; }
+  .btn { padding:12px 16px; border-radius:14px; border:none; background:var(--accent); color:white; cursor:pointer; font-weight:600; letter-spacing:.3px; text-decoration:none; }
+  .hearts { position: fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+  .heart { position:absolute; font-size:16px; opacity:.15; animation: floatUp linear forwards; }
+  @keyframes floatUp { from { transform: translateY(0) scale(1); opacity:.15; } to { transform: translateY(-110vh) scale(1.6); opacity:0; } }
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<div class="wrap">
+  <article class="card">
+    <div class="banner">
+      <div class="cover"></div>
+      <div class="avatar"></div>
+    </div>
+    <section class="content">
+      <div>
+        <h1>Untuk Anisa ❤️</h1>
+        <div class="btns">
+          <button id="revealBtn">✨ Buka Pesan</button>
+          <a href="https://soundcloud.com/username/trackname" target="_blank" class="btn">▶️ Dengarkan Musik</a>
+        </div>
+        <p class="message" id="message"></p>
+      </div>
+    </section>
+  </article>
+</div>
+<script>
+const TO_NAME='Anisa';
+const FROM_NAME='Robi';
+const RAW_MESSAGE=`Hai ${TO_NAME},Allo ! :v
+
+Eeee sebelum itu aku minta maaf karena ga pake tulisan tangan ya takut u ga bisa baca ^_^
+
+Pertama aku ucapkan terimakasih untuk segala hal ya... Eee maaf aku sadarnya baru pas kelas 11... Bahwa u pernah suka sama gweh😈.
+
+Ya mungkin ini bisa dianggap pengungkapan cinta🙂‍↕🌷, karena u memiliki sifat-sifat dari orang yang kuinginkan salah satunya sifat ke ibuan. Walaupun kadang terlihat kekanak kanakan, tetapi ketika bersama semua orang u seperti orang yang paling tua diantara yang lain. Ya aku sudah sadar hal itu ketika kelas 10 si, cuma aku ga sadar bahwa u punya perasaan ke gweh🫠.
+
+Yang KETIGA, kamu membuatku sadar bahwa diriku itu berharga cuma aku salah aja memilih orang yang pantas sebelumnya, seketika aku berpikir bahwa fisik setiap orang itu relative...., aku tidak menuntut kamu berubah tetapi jika bisa kenapa tidak.
+
+TAMBAHAN, kenapa aku milih kado jam tangan... ya karena Waktu adalah sesuatu yang sering kita lihat dan butuhkan, aku ingin didalam jam tersebut kamu selalu Ingat bahwa ROBI selalu ada setiap Waktu saat kamu butuhkan...
+
+Ya mungkin itu saja basa basinya, terakhir Robi Ucapkan Selamat Ulang Tahun adek gembul 🤭. Sekali lagi Robi sampaikan terimakasih atas segala hal yang kamu lakukan hingga merubah ROBI menjadi versi yang lebih baik🥰😉
+
+— ${FROM_NAME}`;
+
+const messageEl=document.getElementById('message'); const revealBtn=document.getElementById('revealBtn');
+
+function spawnHeart(){ const h=document.createElement('div'); h.className='heart'; h.textContent='❤'; h.style.left=Math.random()*100+'vw'; h.style.bottom='-10vh'; h.style.fontSize=(12+Math.random()*20)+'px'; h.style.animationDuration=(6+Math.random()*6)+'s'; document.getElementById('hearts').appendChild(h); setTimeout(()=>h.remove(),12000); } setInterval(spawnHeart,800);
+
+revealBtn.addEventListener('click',()=>{ messageEl.textContent=''; let idx=0; const typing=setInterval(()=>{ if(idx<RAW_MESSAGE.length){ messageEl.textContent+=RAW_MESSAGE[idx++]; } else{ clearInterval(typing); for(let i=0;i<22;i++){ setTimeout(spawnHeart,i*40); } } },20); }); </script>
+
+</body>
+</html>
